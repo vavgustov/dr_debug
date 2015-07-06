@@ -1,0 +1,5 @@
+name = VA Developer
+description = Provide some 3rd party developer tools. Should be disabled on production.
+package = VA
+core = 7.x
+version = 7.x-1.0

@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_init().
+ */
+function va_developer_init() {
+  require_once drupal_get_path('module', 'va_developer') . '/vendor/autoload.php';
+
+  // add Whoops! support
+  $whoops = new \Whoops\Run;
+  $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+  $whoops->register();
+}
+
+class VA {
+
+  // just a wrapper for Symfony VarDumper Component
+  public static function dump($variable) {
+    dump($variable);
+  }
+
+  // lightweight alternative for devel function dprint_r()
+  public static function print_r($variable) {
+    print '<pre>';
+    print_r($variable);
+    print '</pre>';
+  }
+
+  // formatted watchdog output for arrays/objects
+  public static function watchdog_r($name, $variable) {
+    watchdog($name, '<pre>' . print_r($variable, TRUE) . '</pre>');
+  }
+
+}
