@@ -1,4 +1,4 @@
-# VA Developer
+# Drupal Debug
 
 Lightweight module for Drupal 7 debugging.
 
