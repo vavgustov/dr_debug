@@ -3,8 +3,8 @@
 /**
  * Implements hook_init().
  */
-function va_developer_init() {
-  require_once drupal_get_path('module', 'va_developer') . '/vendor/autoload.php';
+function dr_debug_init() {
+  require_once drupal_get_path('module', 'dr_debug') . '/vendor/autoload.php';
 
   // add Whoops! support
   $whoops = new \Whoops\Run;
@@ -12,7 +12,7 @@ function va_developer_init() {
   $whoops->register();
 }
 
-class VA {
+class DG {
 
   // just a wrapper for Symfony VarDumper Component
   public static function dump($variable) {
